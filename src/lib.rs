@@ -3,7 +3,6 @@ use solana_program::{
     entrypoint,
     entrypoint::ProgramResult,
     pubkey::Pubkey,
-    program_error::ProgramError,
     msg,
 };
 
@@ -20,7 +19,7 @@ fn process_instruction(
     let account_info_iter = &mut accounts.iter();
 
     // Getting the account that holds the data for the token (this would be a PDA in a real-world scenario)
-    let token_account = next_account_info(account_info_iter)?;
+    let _token_account = next_account_info(account_info_iter)?;
 
     // Perform a simple operation, like transferring tokens
     // Here you would decode the instruction_data to get transfer amount and destination account
@@ -37,8 +36,8 @@ fn process_instruction(
 // Tests
 #[cfg(test)]
 mod tests {
-    use super::*;
-    use solana_program::clock::Epoch;
+    
+    
 
     #[test]
     fn test_transfer() {
